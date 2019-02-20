@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+  head
+    title Blablabot
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
+  body
+    nav(class="navbar navbar-dark bg-dark")
+      a(class="navbar-brand" href="#") BlaBlaBot
+    .container-fluid
+      .row
+        div(class="order-1 order-md-0 col-12 col-md-9")
+          div(class="p-2 p-md-4")
+            block content
+        div(class="order-0 order-md-1 col-12 col-md-3 position-relative")
+          h2.mt-4 Nastavení
+          #controls
+            .form-group
+              label(for="dict") Typ češtiny
+              select(name="dict", id="dict", class="form-control")
+                  option(value="cs") Obyčejná čeština
+                  option(value="cs-legal") Právnická čeština
+                  option(value="cs-sherlock") Čapkovská čeština
+                  option(value="cs-sherlock") Sherlokovská čeština
+            .form-group
+              label(for="paragraphs") Počet odstavců
+              input(type="number", name="paragraphs", id="paragraphs", class="form-control", value="1", min="1", max="20")
+            .form-check
+              input(type="checkbox", name="headers", id="headers", class="form-check-input")
+              label(for="headers", class="form-check-label") Nadpisy #[span(class="badge badge-danger") In Progress]
+            .form-check
+              input(type="checkbox", name="lists", id="lists", class="form-check-input")
+              label(for="lists", class="form-check-label") Seznamy #[span(class="badge badge-danger") In Progress]
+            .form-check
+              input(type="checkbox", name="images", id="images", class="form-check-input")
+              label(for="images", class="form-check-label") Obrázky #[span(class="badge badge-danger") In Progress]
+
+            button(class="btn btn-dark my-3", id="generate") Generovat
+            div(class="d-flex justify-content-center w-100")
+              a(href="https://github.com/blabot") Based on <strong>blabot-core-js</strong> and <strong>blabot-dictionaries</strong> 🤖
+    script(src="/javascripts/main.js")
