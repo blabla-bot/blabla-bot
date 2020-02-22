@@ -4,10 +4,10 @@ var blabot = require("blabot-core");
 var fs = require("fs")
 
 function getDict(name){
-    const dictionaryFilePath = "dictionaries/" + name + ".json";
+    const dictionaryFilePath = "./../dictionaries/" + name + ".json";
 
     if (!fs.existsSync(dictionaryFilePath))
-    throw new Error('Can’t find file \'' + dictionaryFilePath + '\'\n');
+        throw new Error('Can’t find file \'' + dictionaryFilePath + '\'\n');
 
     const dictionaryJSON = fs.readFileSync(dictionaryFilePath, 'utf-8');
     return JSON.parse(dictionaryJSON);
